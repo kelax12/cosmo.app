@@ -138,7 +138,6 @@ const TaskTable: React.FC<TaskTableProps> = ({
     deleteMutation.mutate(taskId);
     setTaskToDelete(null);
   }, [deleteMutation]);
-  };
 
   // Filtrage et tri mémoïsés
   const filteredAndSortedTasks = useMemo(() => {
