@@ -959,3 +959,4 @@ const HabitsStatistics: React.FC<{ habits: Habit[], rollingRange: { start: Date,
     </div>
   );
 }
+
