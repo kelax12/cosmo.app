@@ -1,4 +1,4 @@
-"import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext } from 'react';
 
 // ═══════════════════════════════════════════════════════════════════
 // IMPORTS DEPUIS MODULES (SOURCE UNIQUE)
@@ -154,4 +154,3 @@ export const useAppContext = (): AppContextType => {
  * @deprecated Use useAppContext instead - kept for backward compatibility
  */
 export const useTasks = useAppContext;
-"
