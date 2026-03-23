@@ -50,26 +50,26 @@ const HabitStatItem = React.memo<HabitStatItemProps>(({ habit, formatTime }) => 
     : 0;
   
   return (
-    <div className=\"space-y-2\">
-      <div className=\"flex justify-between items-center\">
-        <div className=\"flex items-center gap-2\">
-          <span className=\"font-medium\" style={{ color: 'rgb(var(--color-text-primary))' }}>
+    <div className="space-y-2">
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-2">
+          <span className="font-medium" style={{ color: 'rgb(var(--color-text-primary))' }}>
             {habit.name}
           </span>
-          <span className=\"text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400\">
+          <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
             {habit.periodCompletions} fois
           </span>
         </div>
-        <div className=\"flex items-center gap-3\">
-          <span className=\"text-sm font-bold text-emerald-600\">{formatTime(habit.periodTime)}</span>
-          <span className=\"text-xs font-bold\" style={{ color: 'rgb(var(--color-text-muted))' }}>
+        <div className="flex items-center gap-3">
+          <span className="text-sm font-bold text-emerald-600">{formatTime(habit.periodTime)}</span>
+          <span className="text-xs font-bold" style={{ color: 'rgb(var(--color-text-muted))' }}>
             {rate}%
           </span>
         </div>
       </div>
-      <div className=\"w-full h-2 rounded-full bg-muted overflow-hidden\">
+      <div className="w-full h-2 rounded-full bg-muted overflow-hidden">
         <div 
-          className=\"h-full bg-emerald-500 transition-all duration-1000\" 
+          className="h-full bg-emerald-500 transition-all duration-1000" 
           style={{ width: `${rate}%` }} 
         />
       </div>
@@ -908,53 +908,54 @@ const HabitsStatistics: React.FC<{ habits: Habit[], rollingRange: { start: Date,
           {habitsStats.filter(h => h.relevantDaysCount > 0).length > 0 ? habitsStats.filter(h => h.relevantDaysCount > 0).sort((a, b) => b.periodTime - a.periodTime).map(habit => {
             const rate = habit.relevantDaysCount > 0 ? Math.min(100, Math.round((habit.periodCompletions / habit.relevantDaysCount) * 100)) : 0;
               return (
-    <div className=\"space-y-6\">
-      <div className=\"grid grid-cols-1 md:grid-cols-3 gap-6\">
-        <div className=\"card p-5 border-l-4 border-l-blue-500\">
-          <p className=\"text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1\" style={{ color: 'rgb(var(--color-text-muted))' }}>
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="card p-5 border-l-4 border-l-blue-500">
+          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1" style={{ color: 'rgb(var(--color-text-muted))' }}>
             Habitudes actives {periodSuffix}
           </p>
-            <p className=\"text-2xl font-black\" style={{ color: 'rgb(var(--color-text-primary))' }}>
+            <p className="text-2xl font-black" style={{ color: 'rgb(var(--color-text-primary))' }}>
               {activeHabitsCount} / {relevantHabitsCount}
             </p>
         </div>
-        <div className=\"card p-5 border-l-4 border-l-emerald-500\">
-          <p className=\"text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1\" style={{ color: 'rgb(var(--color-text-muted))' }}>
+        <div className="card p-5 border-l-4 border-l-emerald-500">
+          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1" style={{ color: 'rgb(var(--color-text-muted))' }}>
             Taux de succès {periodSuffix}
           </p>
-          <p className=\"text-2xl font-black\" style={{ color: 'rgb(var(--color-text-primary))' }}>
+          <p className="text-2xl font-black" style={{ color: 'rgb(var(--color-text-primary))' }}>
             {avgRate}%
           </p>
         </div>
-        <div className=\"card p-5 border-l-4 border-l-violet-500\">
-          <p className=\"text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1\" style={{ color: 'rgb(var(--color-text-muted))' }}>
+        <div className="card p-5 border-l-4 border-l-violet-500">
+          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1" style={{ color: 'rgb(var(--color-text-muted))' }}>
             Temps investi {periodSuffix}
           </p>
-          <p className=\"text-2xl font-black\" style={{ color: 'rgb(var(--color-text-primary))' }}>
+          <p className="text-2xl font-black" style={{ color: 'rgb(var(--color-text-primary))' }}>
             {formatTime(totalEstimatedTime)}
           </p>
         </div>
       </div>
-      <div className=\"card p-6\">
-        <h3 className=\"text-lg font-semibold mb-6 flex items-center gap-2\" style={{ color: 'rgb(var(--color-text-primary))' }}>
-          <Repeat size={20} className=\"text-emerald-500\" />
+      <div className="card p-6">
+        <h3 className="text-lg font-semibold mb-6 flex items-center gap-2" style={{ color: 'rgb(var(--color-text-primary))' }}>
+          <Repeat size={20} className="text-emerald-500" />
           Détail par habitude {detailSuffix}
         </h3>
-        <div className=\"space-y-6\">
+        <div className="space-y-6">
           {sortedRelevantHabits.length > 0 ? sortedRelevantHabits.map(habit => (
             <HabitStatItem 
               key={habit.id} 
               habit={habit} 
               formatTime={formatTime} 
             />
-          )) : <div className=\"py-8 text-center text-muted-foreground\">Aucune habitude complétée ou active sur cette période.</div>}
+          )) : <div className="py-8 text-center text-muted-foreground">Aucune habitude complétée ou active sur cette période.</div>}
         </div>
-                  <div className=\"h-full bg-emerald-500 transition-all duration-1000\" style={{ width: `${rate}%` }} />
+                  <div className="h-full bg-emerald-500 transition-all duration-1000" style={{ width: `${rate}%` }} />
                 </div>
               </div>
             );
-          }) : <div className=\"py-8 text-center text-muted-foreground\">Aucune habitude complétée ou active sur cette période.</div>}
+          }) : <div className="py-8 text-center text-muted-foreground">Aucune habitude complétée ou active sur cette période.</div>}
         </div>
       </div>
     </div>
   );
+}
