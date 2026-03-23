@@ -859,8 +859,6 @@ const HabitsStatistics: React.FC<{ habits: Habit[], rollingRange: { start: Date,
     [habitsStats]
   );
 
-  const periodSuffix =
-  
   const periodSuffix = 
     selectedPeriod === 'day' ? "aujourd'hui" :
     selectedPeriod === 'week' ? "(7 derniers jours)" :
