@@ -1,4 +1,4 @@
-"// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // PERFORMANCE HOOKS - Optimizations utilitaires
 // ═══════════════════════════════════════════════════════════════════
 
@@ -140,4 +140,3 @@ export const useDebouncedValue = <T>(value: T, delay: number): T => {
 
 // Import useState for useDebouncedValue
 import { useState } from 'react';
-"
