@@ -1,4 +1,4 @@
-"// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // LISTS MODULE - Supabase Repository Implementation
 // ═══════════════════════════════════════════════════════════════════
 
@@ -178,4 +178,3 @@ export class SupabaseListsRepository implements IListsRepository {
     return result;
   }
 }
-"
