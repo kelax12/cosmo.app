@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -7,10 +7,10 @@ const supabaseServiceRoleKey = import.meta.env.VITE_SUPABASE_SERVICE_ROLE_KEY;
 // Check if Supabase credentials are configured
 const hasSupabaseConfig = supabaseUrl && supabaseAnonKey && supabaseUrl !== 'undefined';
 
-// Create Supabase client if credentials are present
-export const supabase = hasSupabaseConfig 
+// Create Supabase client - always create one (either real or will throw clear errors)
+export const supabase: SupabaseClient = hasSupabaseConfig 
   ? createClient(supabaseUrl, supabaseAnonKey)
-  : null;
+  : createClient('https://placeholder.supabase.co', 'placeholder-key');
 
 export const supabaseAdmin = hasSupabaseConfig && supabaseServiceRoleKey 
   ? createClient(supabaseUrl, supabaseServiceRoleKey, {
@@ -32,8 +32,17 @@ export const setDemoMode = (isDemo: boolean) => {
 
 // Check if user is authenticated (call this after auth state changes)
 export const checkAuthAndSetMode = async () => {
-  if (!supabase) {
+  if (!hasSupabaseConfig) {
     isDemoMode = true;
+    return;
+  }
+  
+  const { data: { session } } = await supabase.auth.getSession();
+  isDemoMode = !session;
+};
+
+// Export config status for error handling
+export const isSupabaseConfigured = hasSupabaseConfig;
     return;
   }
   
