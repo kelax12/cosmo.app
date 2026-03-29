@@ -1,4 +1,4 @@
-"// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // Repository Factory - Centralized repository selection
 // ═══════════════════════════════════════════════════════════════════
 
@@ -162,4 +162,3 @@ export function resetRepositories(): void {
   friendsRepository = null;
   okrsRepository = null;
 }
-"
