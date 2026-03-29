@@ -43,9 +43,3 @@ export const checkAuthAndSetMode = async () => {
 
 // Export config status for error handling
 export const isSupabaseConfigured = hasSupabaseConfig;
-    return;
-  }
-  
-  const { data: { session } } = await supabase.auth.getSession();
-  isDemoMode = !session;
-};
