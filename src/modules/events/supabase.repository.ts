@@ -1,4 +1,4 @@
-"// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // EVENTS MODULE - Supabase Repository Implementation
 // ═══════════════════════════════════════════════════════════════════
 
@@ -182,4 +182,3 @@ export class SupabaseEventsRepository implements IEventsRepository {
     return result;
   }
 }
-"
