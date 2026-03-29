@@ -8,6 +8,7 @@ import { TaskProvider } from '@/context/TaskContext';
 import { TooltipProvider } from '@/components/ui/tooltip';
 
 // Lazy load pages for code splitting
+const LandingPage = lazy(() => import('@/pages/LandingPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const TasksPage = lazy(() => import('@/pages/TasksPage'));
 const AgendaPage = lazy(() => import('@/pages/AgendaPage'));
