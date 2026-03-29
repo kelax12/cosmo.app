@@ -80,3 +80,7 @@ memory/test_credentials.md
 
 # Mobile development
 android-sdk/
+
+# Vite temp files
+vite.config.ts.timestamp-*
+*.timestamp-*.mjs
