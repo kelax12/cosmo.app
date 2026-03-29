@@ -1,4 +1,4 @@
-"// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // CATEGORIES MODULE - Supabase Repository Implementation
 // ═══════════════════════════════════════════════════════════════════
 
@@ -128,4 +128,3 @@ export class SupabaseCategoriesRepository implements ICategoriesRepository {
     return result;
   }
 }
-"
