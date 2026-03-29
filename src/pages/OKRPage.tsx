@@ -66,7 +66,7 @@ const OKRPage: React.FC = () => {
     return Math.round(totalProgress / keyResults.length);
   };
 
- updateKeyResult = (objectiveId: string, keyResultId: string, newValue: number) => {
+  const updateKeyResult = (objectiveId: string, keyResultId: string, newValue: number) => {
     const obj = objectives.find((o) => o.id === objectiveId);
     const kr = obj?.keyResults.find((k) => k.id === keyResultId);
     if (kr) {
