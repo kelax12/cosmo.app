@@ -22,7 +22,7 @@ import { useCategories } from '@/modules/categories';
 // ═══════════════════════════════════════════════════════════════════
 // AppContext - uniquement pour domaines NON MIGRÉS
 // ═══════════════════════════════════════════════════════════════════
-import { useAppContext } from \"../context/TaskContext\";
+import { useAppContext } from "../context/TaskContext";
 
 export type EventModalMode = 'add' | 'edit' | 'convert';
 
