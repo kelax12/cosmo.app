@@ -4,7 +4,7 @@ import React, { createContext, useContext } from 'react';
 // IMPORTS DEPUIS MODULES (SOURCE UNIQUE)
 // ═══════════════════════════════════════════════════════════════════
 import { useUser, useAuth, useMessages } from '@/modules/user';
-import { useUIState } from '@/modules/ui-state';
+import { useUIState } from '@/modules/ui-states';
 import { useFriends, useSendFriendRequest, useShareTask, Friend } from '@/modules/friends';
 
 // ═══════════════════════════════════════════════════════════════════
@@ -23,7 +23,7 @@ interface AppContextType {
   messages: { id: string; read: boolean; content: string }[];
   markMessagesAsRead: () => void;
   
-  // Colors (from @/modules/ui-state)
+  // Colors (from @/modules/ui-states)
   colorSettings: Record<string, string>;
   favoriteColors: string[];
   setFavoriteColors: React.Dispatch<React.SetStateAction<string[]>>;
@@ -33,7 +33,7 @@ interface AppContextType {
   sendFriendRequest: (email: string) => void;
   shareTask: (taskId: string, friendId: string, role?: string) => void;
   
-  // Priority Range (from @/modules/ui-state)
+  // Priority Range (from @/modules/ui-states)
   priorityRange: [number, number];
   setPriorityRange: (range: [number, number]) => void;
   
@@ -52,7 +52,7 @@ export const TaskContext = createContext<AppContextType | undefined>(undefined);
  * ═══════════════════════════════════════════════════════════════════
  * ARCHITECTURE MODULAIRE:
  * - User/Auth: @/modules/user
- * - UI State: @/modules/ui-state  
+ * - UI State: @/modules/ui-states  
  * - Friends: @/modules/friends
  * - Tasks: @/modules/tasks
  * - Events: @/modules/events
@@ -139,7 +139,7 @@ export const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children
  * useAppContext - Hook principal pour accéder au contexte global
  * @deprecated Préférer les hooks spécifiques des modules:
  * - useUser, useAuth, useMessages from '@/modules/user'
- * - useUIState, useFavoriteColors, usePriorityRange from '@/modules/ui-state'
+ * - useUIState, useFavoriteColors, usePriorityRange from '@/modules/ui-states'
  * - useFriends from '@/modules/friends'
  */
 export const useAppContext = (): AppContextType => {
