@@ -6,6 +6,7 @@ import { Toaster } from 'sonner';
 // Providers
 import { TaskProvider } from '@/context/TaskContext';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { AuthProvider } from '@/modules/auth/AuthContext';
 
 // Lazy load pages for code splitting
 const LandingPage = lazy(() => import('@/pages/LandingPage'));
