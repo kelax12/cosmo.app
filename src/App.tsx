@@ -10,6 +10,8 @@ import { AuthProvider } from '@/modules/auth/AuthContext';
 
 // Lazy load pages for code splitting
 const LandingPage = lazy(() => import('@/pages/LandingPage'));
+const LoginPage = lazy(() => import('@/pages/LoginPage'));
+const SignupPage = lazy(() => import('@/pages/SignupPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const TasksPage = lazy(() => import('@/pages/TasksPage'));
 const AgendaPage = lazy(() => import('@/pages/AgendaPage'));
@@ -27,8 +29,8 @@ const Layout = lazy(() => import('@/components/Layout'));
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 5,    // 5 minutes
-      gcTime: 1000 * 60 * 30,      // 30 minutes
+      staleTime: 1000 * 60 * 5,
+      gcTime: 1000 * 60 * 30,
       retry: 1,
       refetchOnWindowFocus: false,
     },
@@ -71,8 +73,10 @@ const PageWithSuspense: React.FC<{ children: React.ReactNode }> = ({ children })
 
 const AppRoutes = () => (
   <Routes>
-    {/* Landing page - outside Layout */}
+    {/* Public pages - outside Layout */}
     <Route path="welcome" element={<PageWithSuspense><LandingPage /></PageWithSuspense>} />
+    <Route path="login" element={<PageWithSuspense><LoginPage /></PageWithSuspense>} />
+    <Route path="signup" element={<PageWithSuspense><SignupPage /></PageWithSuspense>} />
     
     {/* Layout wrapper for all routes */}
     <Route element={<LayoutWithSuspense />}>
