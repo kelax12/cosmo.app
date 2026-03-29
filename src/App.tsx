@@ -96,20 +96,22 @@ const AppRoutes = () => (
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <TaskProvider>
-          <Toaster 
-            position="top-right" 
-            richColors 
-            closeButton
-            theme="dark"
-            toastOptions={{
-              duration: 3000,
-            }}
-          />
-          <AppRoutes />
-        </TaskProvider>
-      </TooltipProvider>
+      <AuthProvider>
+        <TooltipProvider>
+          <TaskProvider>
+            <Toaster 
+              position=\"top-right\" 
+              richColors 
+              closeButton
+              theme=\"dark\"
+              toastOptions={{
+                duration: 3000,
+              }}
+            />
+            <AppRoutes />
+          </TaskProvider>
+        </TooltipProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 };
