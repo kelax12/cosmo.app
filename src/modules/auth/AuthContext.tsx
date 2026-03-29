@@ -1,3 +1,11 @@
+
+3. src/components/Layout.tsx (248 lignes)
+Ce fichier est trop long pour être affiché ici en entier, mais le point clé est la ligne 127 qui doit être :
+
+to="/messages"
+(et non to=\"/messages\")
+
+4. src/modules/auth/AuthContext.tsx (137 lignes)
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 import { User as SupabaseUser } from '@supabase/supabase-js';
@@ -46,7 +54,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   });
 
   useEffect(() => {
-    // Check active sessions and sets the user
     const initializeAuth = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session?.user) {
@@ -57,7 +64,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     initializeAuth();
 
-    // Listen for changes on auth state (sign in, sign out, etc.)
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       if (session?.user) {
         setUser(mapSupabaseUserToAppUser(session.user));
@@ -71,6 +77,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const login = async (email: string, password: string) => {
+    if (!isSupabaseConfigured) {
+      return { success: false, error: 'Supabase non configuré. Vérifiez les variables d\'environnement.' };
+    }
     try {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) return { success: false, error: error.message || 'Erreur de connexion' };
@@ -94,7 +103,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           },
         },
       });
-            if (error) return { success: false, error: error.message || "Erreur lors de l'inscription" };
+      if (error) return { success: false, error: error.message || "Erreur lors de l'inscription" };
       return { success: true };
     } catch {
       return { success: false, error: 'Une erreur est survenue' };
