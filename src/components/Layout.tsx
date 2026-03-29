@@ -124,7 +124,7 @@ const Layout: React.FC = () => {
   const CompanyItems = () =>
   <>
         <NavLink
-      to=\"/messages\"
+      to="/messages"
       className={({ isActive }) => `sidebar-item ${isActive ? 'active' : ''} ${isCollapsed && !isMobileMenuOpen ? 'justify-center px-0' : ''}`}
       onClick={() => {
         setIsMobileMenuOpen(false);
