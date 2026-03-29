@@ -66,8 +66,8 @@ export default function ErrorReporter({ error, reset: _reset }: ReporterProps) {
     pollRef.current = setInterval(pollOverlay, 1000);
 
     return () => {
-      window.removeEventListener(\"error\", onError);
-      window.removeEventListener(\"unhandledrejection\", onReject);
+      window.removeEventListener("error", onError);
+      window.removeEventListener("unhandledrejection", onReject);
       if (pollRef.current) clearInterval(pollRef.current);
     };
   }, []);
