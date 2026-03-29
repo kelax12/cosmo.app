@@ -255,5 +255,3 @@ export class SupabaseTasksRepository implements ITasksRepository {
     return result;
   }
 }
-
-"
