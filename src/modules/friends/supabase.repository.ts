@@ -1,4 +1,4 @@
-"// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // FRIENDS MODULE - Supabase Repository Implementation
 // ═══════════════════════════════════════════════════════════════════
 
@@ -220,4 +220,3 @@ export class SupabaseFriendsRepository implements IFriendsRepository {
     };
   }
 }
-"
