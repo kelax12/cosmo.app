@@ -1,4 +1,4 @@
-"// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // OKRS MODULE - Supabase Repository Implementation
 // ═══════════════════════════════════════════════════════════════════
 
@@ -218,4 +218,3 @@ export class SupabaseOKRsRepository implements IOKRsRepository {
     return result;
   }
 }
-"
