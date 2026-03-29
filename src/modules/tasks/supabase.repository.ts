@@ -1,4 +1,4 @@
-"import { supabase } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase';
 import { normalizeApiError } from '@/lib/normalizeApiError';
 import { ITasksRepository } from './repository';
 import { Task, CreateTaskInput, UpdateTaskInput, TaskFilters } from './types';
@@ -255,4 +255,5 @@ export class SupabaseTasksRepository implements ITasksRepository {
     return result;
   }
 }
+
 "
