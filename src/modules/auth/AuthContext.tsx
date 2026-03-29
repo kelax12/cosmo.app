@@ -81,6 +81,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const register = async (name: string, email: string, password: string) => {
+    if (!isSupabaseConfigured) {
+      return { success: false, error: 'Supabase non configuré. Vérifiez les variables d\'environnement.' };
+    }
     try {
       const { error } = await supabase.auth.signUp({
         email,
