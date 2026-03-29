@@ -1,9 +1,9 @@
-\"use client\"
+"use client"
 
-import * as React from \"react\"
-import { CalendarIcon, ChevronLeft, ChevronRight } from \"lucide-react\"
-import { cn } from \"@/lib/utils\"
-import { Popover, PopoverContent, PopoverTrigger } from \"@/components/ui/popover\"
+import * as React from "react"
+import { CalendarIcon, ChevronLeft, ChevronRight } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
 interface DatePickerProps {
   value?: string
@@ -18,7 +18,7 @@ const MONTHS = [
 
 const DAYS = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
 
-export function DatePicker({ value, onChange, placeholder: _placeholder = \"Sélectionner une date\", className }: DatePickerProps) {
+export function DatePicker({ value, onChange, placeholder: _placeholder = "Sélectionner une date", className }: DatePickerProps) {
   const [open, setOpen] = React.useState(false)
   const [viewDate, setViewDate] = React.useState(() => {
     if (value) return new Date(value)
