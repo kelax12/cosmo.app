@@ -100,10 +100,10 @@ const App: React.FC = () => {
         <TooltipProvider>
           <TaskProvider>
             <Toaster 
-              position=\"top-right\" 
+              position="top-right" 
               richColors 
               closeButton
-              theme=\"dark\"
+              theme="dark"
               toastOptions={{
                 duration: 3000,
               }}
