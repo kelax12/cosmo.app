@@ -70,6 +70,9 @@ const PageWithSuspense: React.FC<{ children: React.ReactNode }> = ({ children })
 
 const AppRoutes = () => (
   <Routes>
+    {/* Landing page - outside Layout */}
+    <Route path=\"welcome\" element={<PageWithSuspense><LandingPage /></PageWithSuspense>} />
+    
     {/* Layout wrapper for all routes */}
     <Route element={<LayoutWithSuspense />}>
       <Route index element={<Navigate to="/dashboard" replace />} />
