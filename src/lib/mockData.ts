@@ -1,4 +1,4 @@
-"// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
 // MOCK DATA - Données de démonstration
 // Types importés depuis les modules (source unique de vérité)
 // ═══════════════════════════════════════════════════════════════════
@@ -90,7 +90,7 @@ export const INITIAL_TASKS: Task[] = [
   },
   {
     id: 'task-5',
-    name: 'Lecture : \"Atomic Habits\"',
+    name: 'Lecture : "Atomic Habits"',
     priority: 2,
     category: 'cat-1',
     deadline: new Date().toISOString().split('T')[0],
@@ -198,4 +198,3 @@ export const INITIAL_OKRS: OKR[] = [
     ]
   }
 ];
-"
