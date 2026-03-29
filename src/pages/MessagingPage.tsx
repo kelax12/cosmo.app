@@ -58,7 +58,7 @@ function isGroupConversation(conv: Conversation | GroupConversation | undefined)
   return conv !== undefined && 'isGroup' in conv && conv.isGroup === true;
 }
 
-const RenderAvatar = ({ avatar, className = \"w-10 h-10\", textClassName = \"text-lg\" }: { avatar: string | undefined, className?: string, textClassName?: string }) => {
+const RenderAvatar = ({ avatar, className = "w-10 h-10", textClassName = "text-lg" }: { avatar: string | undefined, className?: string, textClassName?: string }) => {
   const isUrl = avatar && (avatar.startsWith('http') || avatar.startsWith('data:image') || avatar.startsWith('/'));
   
   return (
