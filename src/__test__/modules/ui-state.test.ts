@@ -3,14 +3,14 @@
 // ═══════════════════════════════════════════════════════════════════
 
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { ColorSettings, PriorityRange, UIState } from '@/modules/ui-state/types';
+import { ColorSettings, PriorityRange, UIState } from '@/modules/ui-states/types';
 import {
   DEFAULT_FAVORITE_COLORS,
   DEFAULT_PRIORITY_RANGE,
   DEFAULT_COLOR_SETTINGS,
   FAVORITE_COLORS_KEY,
   PRIORITY_RANGE_KEY,
-} from '@/modules/ui-state/constants';
+} from '@/modules/ui-states/constants';
 
 // ═══════════════════════════════════════════════════════════════════
 // MOCK SETUP
@@ -191,3 +191,4 @@ describe('Priority Range Operations', () => {
     expect(filtered.map(t => t.id)).toEqual(['2', '3', '4']);
   });
 });
+
