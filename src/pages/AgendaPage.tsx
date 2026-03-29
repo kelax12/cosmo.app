@@ -395,7 +395,7 @@ setShowTaskSidebar(false);
                     </motion.button>
                   </div>
 
-                  <div className=\"flex rounded-lg p-0.5 col-span-2 lg:col-span-1 lg:w-auto\" style={{ backgroundColor: 'rgb(var(--color-hover))' }}>
+                  <div className="flex rounded-lg p-0.5 col-span-2 lg:col-span-1 lg:w-auto" style={{ backgroundColor: 'rgb(var(--color-hover))' }}>
                     {['timeGridDay', 'timeGridWeek', 'dayGridMonth'].map((view, _index) =>
                       <motion.button
                         key={view}
