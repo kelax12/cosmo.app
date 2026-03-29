@@ -1,11 +1,3 @@
-
-3. src/components/Layout.tsx (248 lignes)
-Ce fichier est trop long pour être affiché ici en entier, mais le point clé est la ligne 127 qui doit être :
-
-to="/messages"
-(et non to=\"/messages\")
-
-4. src/modules/auth/AuthContext.tsx (137 lignes)
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 import { User as SupabaseUser } from '@supabase/supabase-js';
