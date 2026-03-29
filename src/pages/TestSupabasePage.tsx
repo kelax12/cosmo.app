@@ -1,4 +1,4 @@
-"import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import { useAuth } from '../modules/auth/AuthContext';
 import { CheckCircle, XCircle, Loader2, Database, User, Shield, Wifi } from 'lucide-react';
