@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Dev (Vite)",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": ["./node_modules/vite/bin/vite.js"],
+      "port": 3000
+    },
+    {
+      "name": "Start (0.0.0.0:3000)",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": ["node_modules/.bin/vite", "--host", "0.0.0.0", "--port", "3000"],
+      "port": 3000
+    },
+    {
+      "name": "Preview (build)",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": ["node_modules/.bin/vite", "preview"],
+      "port": 4173
+    }
+  ]
+}

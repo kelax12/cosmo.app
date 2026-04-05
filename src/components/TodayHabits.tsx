@@ -26,7 +26,7 @@ const TodayHabits: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="card p-6">
+      <div className="rounded-2xl bg-white/[0.04] dark:bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] p-6 hover:border-white/[0.15] hover:bg-white/[0.07] transition-all duration-300">
         <div className="flex items-center gap-3 mb-6">
           <div className="p-2 bg-indigo-50 dark:bg-purple-900/20 rounded-xl border border-indigo-100 dark:border-purple-800/30">
             <Repeat size={24} className="text-indigo-600 dark:text-purple-400" />
