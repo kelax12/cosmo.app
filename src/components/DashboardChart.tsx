@@ -77,7 +77,7 @@ const DashboardChart: React.FC = () => {
 
   return (
     <motion.div 
-      className="relative overflow-hidden rounded-3xl bg-[rgb(var(--color-surface))] border border-[rgb(var(--color-border))] p-6 lg:p-8 shadow-lg dark:shadow-2xl"
+      className="relative overflow-hidden rounded-3xl bg-white/[0.04] dark:bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] p-6 lg:p-8 hover:border-white/[0.15] hover:bg-white/[0.07] transition-all duration-300"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

@@ -81,7 +81,7 @@ const TodayTasks: React.FC = () => {
   // Loading state
   if (isLoadingTasks) {
     return (
-      <div className="p-6 bg-[rgb(var(--color-surface))] border border-[rgb(var(--color-border))] rounded-2xl shadow-sm">
+      <div className="p-6 bg-white/[0.04] dark:bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-2xl hover:border-white/[0.15] hover:bg-white/[0.07] transition-all duration-300">
         <div className="flex items-center gap-3 mb-6">
           <div className="p-2 bg-[rgb(var(--color-accent)/0.15)] rounded-xl">
             <CheckSquare size={24} className="text-[rgb(var(--color-accent))]" />
