@@ -84,3 +84,8 @@ android-sdk/
 # Vite temp files
 vite.config.ts.timestamp-*
 *.timestamp-*.mjs
+# Environment files (comprehensive coverage)
+.env
+.env.local
+.env.*.local
+
